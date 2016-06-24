@@ -1,0 +1,13 @@
+// Testing sass-gulp task
+@mixin border-radius($radius){
+    border-radius: $radius
+}
+
+h1{
+    background-color: black;
+    & > p {
+        color:red;
+        font-size: 12px;
+    }
+    @include border-radius(15px);
+}
