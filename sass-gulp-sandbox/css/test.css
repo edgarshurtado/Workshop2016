@@ -1,0 +1,6 @@
+h1 {
+  background-color: black;
+  border-radius: 15px; }
+  h1 > p {
+    color: red;
+    font-size: 12px; }
