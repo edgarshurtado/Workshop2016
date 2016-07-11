@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }} - Tareas</title>
+</head>
+<body>
+    <h1>{{ title }}</h1>
+    <p> Bienvenido a {{ title }}</p>
+
+    <ul>
+        {% for name in nombres %}
+            <li>{{ name }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
