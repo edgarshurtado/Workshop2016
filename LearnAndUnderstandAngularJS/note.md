@@ -276,7 +276,7 @@ setTimeout(function() {
 }, 3000);
 ```
 
-I we had used the angular service `$timeout` we could get rid of `.apply`. This
+I we had used the angular service `$timeout` we could get rid of `.$apply`. This
 is a big criticism of AngularJS. You have to buy completly the platform and 
 write everything on its way for creating complex applications.
 
@@ -285,6 +285,161 @@ write everything on its way for creating complex applications.
 ## Class 21. Common Directives
 
 ### ng-if
+
+shows the element when te expresion valuates to true:
+
+```html
+<div class="alert" ng-if="handle.length !== characters"> 
+The imput has to be 5 characters long 
+</div>
+```
+
+> For this example we first set a variable in the scope called 
+`characters`
+
+### ng-show && ng-hide
+
+This works similarly as `ng-if` 
+
+### ng-class
+
+Allows to add a class with a condition
+
+```html
+<div class="alet" ng-class="{'alert-warning': handle.length < characters}"></div>
+```
+we can add as many classes with their conditions as we want
+
+### ng-repeat
+
+```js
+$scope.rules= [
+    {rulename: "Something"},
+    {rulename: "Something else"},
+    {rulename: "Something more"}
+]
+```
+
+```html
+<ul>
+    <li ng-repeat="rule in rules">
+        {{ rule.rulename}}
+    </li>
+</ul>
+```
+
+## Class 22. Common directives 2
+
+### ng-click
+
+```js
+var myApp = angular.module("myApp", []);
+
+myApp.controller("mainController", ["$scope", function($scope){
+    $scope.alertClick() = function() {
+        alert();
+    }
+}]);
+```
+
+```html
+<div ng-click="alertClick()"></div>
+```
+
+### ng-cloak
+
+Makes sure the user doesn't see the interpolation code
+
+```html
+<div ng-cloak>{{name}}</div>
+```
+
+
+## Class 23. XMLHTTPRequest Object (JavaScript Aside)
+
+Explanation of XMLHttpRequest
+
+## Class 24. External Data and $http
+
+To get information from an external API
+
+```js
+var myApp = angular.module("myApp", []);
+
+myApp.controller("mainController", ["$scope", "$http", function($scope, $http){
+    $http.get('/api')
+        .success(function(result){
+            $scope.rules = result;
+        })
+        .error(function(data, status){
+            console.log(data);
+        });
+
+    $scope.newRule = '';
+
+    $scope.addRule = function(){
+        $http.post('/api', {newRule: $scope.newRule})
+            .success(function(result){ //The post rule send data and
+                                        // and then does a get
+                $scope.rules = result;
+                $scope.newRule = '';
+            })
+            .error(function(data, status){
+                console.log(data);
+            })
+    }
+}]);
+```
+
+## Class 25. Multiple controllers, multiple views
+The variables are unique for each controller, so they don't collide,
+they don't pollute de global scope
+
+## Class 26. Single page apps and hash. (HTML and Javascript Aside)
+The navigation with hash on `anchors` are called fragment identifiers
+
+JS has a event called 'hashchange' which fires when the (as its name
+says) hash changes.
+
+For the event to be launched, we don't actually need a target anchor.
+So with this, we can emulate a navigation.
+
+## Class 27. Routing, templates, and controllers
+
+We use the angular external service **$ngRoute** for doing this.
+
+```js
+var myApp = angular.module('myApp', ['$ngRoute']);
+
+myApp.config(function($routeProvider){
+    $routeProvider
+
+    .when('/', {
+        templateUrl: 'pages/main.html',
+        controller: 'mainController'
+    })
+    .when('/second', {
+        templateUrl: 'pages/second.html'
+        controller: 'secondController'
+    });
+});
+
+myApp.controller('mainController', ['$scope', '$location', '$log', function($scope, $location, $log){
+    // Do some stuff
+}])
+
+myApp.controller('secondController', ['$scope', '$location', '$log', function($scope, $location, $log){
+    // Do some stuff
+}])
+```
+
+```html
+<div ng-view></div>
+```
+
+## Class 28. Routing, templates, and controllers (2)
+
+Whenever we put the `ng-view` that dom will be updated with the `$routeProvider` configuration
 
 ## Big Words Index
 
