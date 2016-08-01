@@ -441,9 +441,180 @@ myApp.controller('secondController', ['$scope', '$location', '$log', function($s
 
 Whenever we put the `ng-view` that dom will be updated with the `$routeProvider` configuration
 
+### RouteParams
+With this service (comes along with ngRoute), we can set parts of the route to specific variables:
+
+```js
+myApp.config(function ($routeProvider) {
+    $routeProvider
+
+    .when('/second/:num', { // Whatever after second/ will be set to num
+        templateUrl: 'pages/second.html',
+        controller: 'secondController'
+    })
+});
+
+myApp.controller('secondController', ["$scope", "$log", "$routeParams",
+function($scope, $log, $routeParams){
+    $scope.num = $routeParams.num;
+}])
+```
+
+> Notice that for matching the route, now we need 'second/something'. If the 
+route is just 'second/' it won't match.
+
+
+## Class 29. Singletons and services. JS Aside
+* **Singleton**: The one and only copy of an object
+
+All services in AngularJS are singletons but `$scope`
+
+## Class 30. Creating a service
+
+```js
+myApp.service('nameService', function(){
+    var self = this;
+    this.name = 'John Doe';
+
+    this.namelength = function() {
+        return self.name.length;
+    };
+})
+
+myApp.controller('testController', ['nameService', function(nameService){
+    console.log(nameService.namelength());
+}])
+```
+
+If we wanted to update the name of the service from the scope (this means
+whenever the $scope variable chages):
+
+```js
+myApp.service('nameService', function(){
+    var self = this;
+    this.name = 'John Doe';
+
+    this.namelength = function() {
+        return self.name.length;
+    };
+})
+
+myApp.controller('testController', ['nameService', function(nameService){
+    $scope.name = nameService.name;
+
+    $scope.$watch('name', function(){
+        nameService.name = $scope.name;
+    });
+}])
+```
+
+
+> If you refresh the page you'll lose the data changed. For saving it it's 
+needed to persist it in someway (cookie, localstorage, etc...)
+
+## Class 31. Reusable components. HTML Aside
+Web components for the win!
+
+Costume directives from Angular were the patch for having the power of
+web components while they weren't implemented yet.
+
+## Class 32. Variable names and normalization. JS Aside
+
+* **Normalize**: To make consistent to a standard
+    + Specifically we are dealing with 'text normalization', or making strings
+    of text consistent to a standard
+
+```js
+var resultLinkHref = '#';
+```
+
+Will be normalizad in `HTML` into: 
+
+```html
+<div result-link-href='#'></div>
+```
+
+## Class 33, 34. Creating a Directive
+
+```js
+myApp.directive('searchResult', funtion(){
+    return {
+        restrict: 'AECM'
+        //template: "<h1>Hello</h1>"
+        templateUrl: "directives/searchResult.html"
+        replace: true
+    }
+})
+```
+
+* replace: restrict the ways a directive can be used
+    * A: As an attribute
+    * E: As an element
+    * C: As a class
+    * M: As comment
+* template: html string
+* templateUrl: set an external html as template
+* replace: eliminates the tag from the directive. False by default
+
+```html
+<!-- These 4 ways will ouput the same -->
+<search-result></search-result>
+<div search-result></div>
+<div class="search-result"></div>
+<!-- directive: search-result -->
+```
+
+## Class 35. Scope
+
+
+To avoid the data access and modifications from the directives in various pages
+
+the `scope` in the directives are isolated, so if we want to link the controller
+scope with the directive scope we do the following
+
+```js
+myApp.controller(function($scope){
+    $scope.person = {
+        name = "John Doe",
+        adress = "False Street 555"
+    }
+})
+
+myApp.directive('searchResult', funtion(){
+    return {
+        restrict: 'AECM'
+        templateUrl: "directives/searchResult.html"
+        replace: true,
+        scope: {
+            personName: "@"
+        }
+    }
+})
+```
+
+* @: Text
+
+As the directive lives inside a controller, has access to the $scope of its 
+parent directive
+
+```html
+<!-- Template -->
+<a href="#" class="list-group-item">
+    <h4 class="list-group-item-heading">{{ person.name }}</h4>
+    <p class="list-group-item-text">
+        {{ person.adress }}
+    </p>
+</a>
+
+<!-- using the directive -->
+<search-result person-name={{ person.name }}></search-result>
+```
+
+
 ## Big Words Index
 
 * Dependency injection. Class 10
 * Minification. Class 15
 * Interpolation. Class 17
-* Directive. Class 
+* Directive. Class 18
+* Singleton. class 29
