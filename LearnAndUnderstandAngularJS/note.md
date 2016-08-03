@@ -564,7 +564,7 @@ myApp.directive('searchResult', funtion(){
 <!-- directive: search-result -->
 ```
 
-## Class 35. Scope
+## Class 35 & 36. Scope
 
 
 To avoid the data access and modifications from the directives in various pages
@@ -578,6 +578,10 @@ myApp.controller(function($scope){
         name = "John Doe",
         adress = "False Street 555"
     }
+
+    $scope.formatedAddress = function(person){
+        return person + " " + adress;
+    }
 })
 
 myApp.directive('searchResult', funtion(){
@@ -586,13 +590,17 @@ myApp.directive('searchResult', funtion(){
         templateUrl: "directives/searchResult.html"
         replace: true,
         scope: {
-            personName: "@"
+            personName: "@",
+            personObject: "=",
+            formattedAddressFunction: "&"
+
         }
     }
 })
 ```
 
 * @: Text
+* =: Object
 
 As the directive lives inside a controller, has access to the $scope of its 
 parent directive
@@ -600,16 +608,80 @@ parent directive
 ```html
 <!-- Template -->
 <a href="#" class="list-group-item">
-    <h4 class="list-group-item-heading">{{ person.name }}</h4>
+    <h4 class="list-group-item-heading">{{ personName }}</h4>
     <p class="list-group-item-text">
-        {{ person.adress }}
+        {{ personObject.adress }}
+    </p>
+    <p class="list-group-item-text">
+    <!-- We pass to the function an mapping object. each key 
+    has to be the placeholder defined in the template for the
+    function custom atributte. The value is the actual value we
+    want to pass to the function -->
+        {{ formatedAddressFunction({ aperson:personObject }) }}
     </p>
 </a>
 
 <!-- using the directive -->
-<search-result person-name={{ person.name }}></search-result>
+<search-result person-object={{ person }} 
+    person-name={{ person.name }}
+    formated-adress-function="formatedAddress(aperson)">
+</search-result>
 ```
 
+## Class 38. Repeated directives
+
+```js
+myApp.controller("mainController", ["$scope", function($scope){
+    $scope.people = [
+        person1: new Person(),
+        person2: new Person(),
+        person3: new Person(),
+    ]
+}])
+```
+
+```html
+<div ng-repeat="person in people">
+    <p>One persone</p>
+</div>
+```
+
+## Class 39. Understanding Compile
+* Compiler: Converts code to a lower-level language
+* Linker: After the compiler, generates a file the computer will actually interact with.
+
+> Very computer science-y terms that are sort of valid, but not 
+familiar to many web developers...**and not what angularjs does**
+
+```js
+myApp.directive('searchResult', funtion(){
+    return {
+        restrict: 'AECM'
+        templateUrl: "directives/searchResult.html"
+        replace: true,
+        scope: {
+            personName: "@",
+            personObject: "=",
+            formattedAddressFunction: "&"
+
+        },
+        compile: function(elem, attrs){
+            console.log('Compiling...');
+            console.log(elem);
+
+            return {
+                pre: function(scope, element, attrs){
+                    console.log('Pre-linking...');
+                },
+
+                post: function(scope, element, attrs) {
+                    console.log('Post-linking');
+                }
+            }
+        }
+    }
+})
+```
 
 ## Big Words Index
 
@@ -618,3 +690,5 @@ parent directive
 * Interpolation. Class 17
 * Directive. Class 18
 * Singleton. class 29
+* Compiler. Class 39
+* Linker. Class 39
