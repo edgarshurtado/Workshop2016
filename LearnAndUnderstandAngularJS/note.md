@@ -683,6 +683,74 @@ myApp.directive('searchResult', funtion(){
 })
 ```
 
+* Compile is called once. It defines the directive html. Can change the 
+element before being used.
+* pre-link and post-link are called once by each loop
+    - Pre-link (normaly not used. We don't have still the element)
+    - Post-link is called once after all the pre-links in reverse order than
+    pre-link (is a safer method to use because at that point
+
+This is used when we need to add some logic depending on the ocasion for a 
+directive and it's too complex to put it in the directive itself.
+
+## Class 40. Understanding link
+
+Hardly ever we use `compile`. so instead we can use `link`
+
+```js
+link: function(scope, element, attrs){
+                    console.log('Pre-linking...');
+},
+```
+
+> Beware with the performance issues when doing this.
+
+## Class 41. Understanding Transclusion
+* **Transclusion**: Include one document inside another
+
+```js
+myApp.directive('searchResult', funtion(){
+    return {
+        restrict: 'AECM'
+        templateUrl: "directives/searchResult.html"
+        replace: true,
+        scope: {
+            personName: "@",
+            personObject: "=",
+            formattedAddressFunction: "&"
+
+        },
+        transclude: true // to enable transclusion
+    }
+})
+```
+
+```html
+<!-- Template -->
+<a href="#" class="list-group-item">
+    <h4 class="list-group-item-heading">{{ personName }}</h4>
+    <p class="list-group-item-text">
+        {{ personObject.adress }}
+    </p>
+    <p class="list-group-item-text">
+        {{ formatedAddressFunction({ aperson:personObject }) }}
+    </p>
+    <small>
+        <ng-transclude></ng-transclude>
+    </small>
+</a>
+
+<!-- using the directive -->
+<search-result person-object={{ person }} 
+    person-name={{ person.name }}
+    formated-adress-function="formatedAddress(aperson)">
+    *Search results may not be valid
+    <!-- The text above will be inserted in the ng-transclude position -->
+</search-result>
+```
+
+`<ng-transclude>` marks the insert point.
+
 ## Big Words Index
 
 * Dependency injection. Class 10
@@ -692,3 +760,4 @@ myApp.directive('searchResult', funtion(){
 * Singleton. class 29
 * Compiler. Class 39
 * Linker. Class 39
+* Transclusion: Class 41
