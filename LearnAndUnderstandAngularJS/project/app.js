@@ -16,12 +16,12 @@ firstAngularApp.controller("indexController", ["$scope", "dataService", function
     $scope.city = dataService.city;
 
     $scope.$watch("city", function(){
-        dataService.name = $scope.name
+        dataService.name = $scope.name;
     })
 }]);
 
-firstAngularApp.controller("forecastController", ["$scope", function($scope){
-    
+firstAngularApp.controller("forecastController", ["$scope", "dataService",function($scope, dataService){
+    $scope.city = dataService.city;
 }]);
 
 
