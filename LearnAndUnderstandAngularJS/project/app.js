@@ -55,8 +55,6 @@ firstAngularApp.controller("forecastController", ["$scope", "dataService", "$res
                 dt * 1000 // Multiplied by 1000 because the api returns the date in seconds and we need miliseconds
             );
         };
-
-        console.log($scope)
 }]);
 
 
