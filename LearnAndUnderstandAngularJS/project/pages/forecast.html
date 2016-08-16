@@ -9,14 +9,9 @@ Days:   <a ng-class="{'bg-primary': days == 2}" href="#/forecast/2">2</a> |
 
 <div ng-repeat="w in weatherResult.list">
     <div class="row">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <!-- Use of the builtin date filter. See Angular API docs for more information-->
-                <h3 class="panel-title">{{ convertToDate(w.dt) | date : 'd MMMM yyyy'}}</h3>
-            </div>
-            <div class="panel-body">
-                Daytime temperature: {{  convertToCelsius(w.temp.day) }}º
-            </div>
-        </div>
+        <weather-result weather-object="{{w}}"
+                        formatted-date-function="convertToDate(date)"
+                        convert-to-celsius-function="convertToCelsius(dg)">
+        </weather-result>
     </div>
 </div>

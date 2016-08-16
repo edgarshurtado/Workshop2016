@@ -601,6 +601,7 @@ myApp.directive('searchResult', funtion(){
 
 * @: Text
 * =: Object
+* &: Function
 
 As the directive lives inside a controller, has access to the $scope of its 
 parent directive
@@ -613,7 +614,7 @@ parent directive
         {{ personObject.adress }}
     </p>
     <p class="list-group-item-text">
-    <!-- We pass to the function an mapping object. each key 
+    <!-- We pass to the function a mapping object. each key 
     has to be the placeholder defined in the template for the
     function custom atributte. The value is the actual value we
     want to pass to the function -->
@@ -627,6 +628,8 @@ parent directive
     formated-adress-function="formatedAddress(aperson)">
 </search-result>
 ```
+
+> Notice that we don't use the double moustache notation when passing a function
 
 ## Class 38. Repeated directives
 

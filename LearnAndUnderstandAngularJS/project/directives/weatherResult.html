@@ -1,0 +1,9 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <!-- Use of the builtin date filter. See Angular API docs for more information-->
+        <h3 class="panel-title">{{ formattedDateFunction({ date : weatherObject.dt }) | date : 'd MMMM yyyy'}}</h3>
+    </div>
+    <div class="panel-body">
+        Daytime temperature: {{  convertToCelsiusFunction({ dg : weatherObject.temp.day}) }}º
+    </div>
+</div>

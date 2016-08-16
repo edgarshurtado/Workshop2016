@@ -47,10 +47,12 @@ firstAngularApp.controller("forecastController", ["$scope", "dataService", "$res
         });
 
         $scope.convertToCelsius = function(degK){
+            console.log(degK);
             return Math.round(degK - 273.15);
         };
 
         $scope.convertToDate = function(dt){
+            console.log(dt);
             return new Date(
                 dt * 1000 // Multiplied by 1000 because the api returns the date in seconds and we need miliseconds
             );
@@ -61,4 +63,18 @@ firstAngularApp.controller("forecastController", ["$scope", "dataService", "$res
 // ------------- Services -----------------
 firstAngularApp.service("dataService", function(){
     this.city = "Gandia, ES"
+});
+
+// --------------- Directives --------------
+firstAngularApp.directive("weatherResult", function(){
+    return {
+        restrict: "E",
+        templateUrl: "directives/weatherResult.html",
+        replace: true,
+        scope: {
+            weatherObject : "=",
+            formattedDateFunction : "&",
+            convertToCelsiusFunction : "&"
+        }
+    }
 });
