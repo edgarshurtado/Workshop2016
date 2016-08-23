@@ -1,0 +1,12 @@
+$primary-col : red;
+
+ul{
+    color: $primary-col;
+    li {
+        color: blue;
+
+        &:last-of-type{
+            color: red;
+        }
+    }
+}
