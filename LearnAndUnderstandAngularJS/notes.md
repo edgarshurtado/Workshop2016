@@ -623,13 +623,14 @@ parent directive
 </a>
 
 <!-- using the directive -->
-<search-result person-object={{ person }} 
-    person-name={{ person.name }}
-    formated-adress-function="formatedAddress(aperson)">
+<search-result person-object= "person" 
+    person-name="person.name"
+    formated-address-function="formatedAddress(aperson)">
 </search-result>
 ```
 
-> Notice that we don't use the double moustache notation when passing a function
+> Notice that we don't use the double moustache notation when giving to the
+directive the values for its curstom properties  
 
 ## Class 38. Repeated directives
 

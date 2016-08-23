@@ -9,7 +9,7 @@ Days:   <a ng-class="{'bg-primary': days == 2}" href="#/forecast/2">2</a> |
 
 <div ng-repeat="w in weatherResult.list">
     <div class="row">
-        <weather-result weather-object="{{w}}"
+        <weather-result weather-object="w"
                         formatted-date-function="convertToDate(date)"
                         convert-to-celsius-function="convertToCelsius(dg)">
         </weather-result>
