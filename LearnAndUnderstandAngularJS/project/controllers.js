@@ -2,13 +2,17 @@
  * Created by Edgar S. Hurtado on 23/08/16.
  */
 
-firstAngularApp.controller("indexController", ["$scope", "dataService", function($scope, dataService){
+firstAngularApp.controller("indexController", ["$scope", "$location" ,"dataService", function($scope, $location, dataService){
     $scope.city = dataService.city;
 
     // This function is necesary for updating the value of the dataService whenever the `$scope.city` changes
     $scope.$watch("city", function(){
         dataService.city = $scope.city;
     })
+
+    $scope.submit = function(){
+        $location.path("/forecast");
+    }
 }]);
 
 firstAngularApp.controller("forecastController", ["$scope", "dataService", "$resource", "$routeParams",

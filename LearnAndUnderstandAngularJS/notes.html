@@ -1,0 +1,1689 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>body {
+  width: 45em;
+  border: 1px solid #ddd;
+  outline: 1300px solid #fff;
+  margin: 16px auto;
+}
+
+body .markdown-body
+{
+  padding: 30px;
+}
+
+@font-face {
+  font-family: fontawesome-mini;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+@font-face {
+  font-family: octicons-anchor;
+  src: url(data:font/woff;charset=utf-8;base64,d09GRgABAAAAAAYcAA0AAAAACjQAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABGRlRNAAABMAAAABwAAAAca8vGTk9TLzIAAAFMAAAARAAAAFZG1VHVY21hcAAAAZAAAAA+AAABQgAP9AdjdnQgAAAB0AAAAAQAAAAEACICiGdhc3AAAAHUAAAACAAAAAj//wADZ2x5ZgAAAdwAAADRAAABEKyikaNoZWFkAAACsAAAAC0AAAA2AtXoA2hoZWEAAALgAAAAHAAAACQHngNFaG10eAAAAvwAAAAQAAAAEAwAACJsb2NhAAADDAAAAAoAAAAKALIAVG1heHAAAAMYAAAAHwAAACABEAB2bmFtZQAAAzgAAALBAAAFu3I9x/Nwb3N0AAAF/AAAAB0AAAAvaoFvbwAAAAEAAAAAzBdyYwAAAADP2IQvAAAAAM/bz7t4nGNgZGFgnMDAysDB1Ml0hoGBoR9CM75mMGLkYGBgYmBlZsAKAtJcUxgcPsR8iGF2+O/AEMPsznAYKMwIkgMA5REMOXicY2BgYGaAYBkGRgYQsAHyGMF8FgYFIM0ChED+h5j//yEk/3KoSgZGNgYYk4GRCUgwMaACRoZhDwCs7QgGAAAAIgKIAAAAAf//AAJ4nHWMMQrCQBBF/0zWrCCIKUQsTDCL2EXMohYGSSmorScInsRGL2DOYJe0Ntp7BK+gJ1BxF1stZvjz/v8DRghQzEc4kIgKwiAppcA9LtzKLSkdNhKFY3HF4lK69ExKslx7Xa+vPRVS43G98vG1DnkDMIBUgFN0MDXflU8tbaZOUkXUH0+U27RoRpOIyCKjbMCVejwypzJJG4jIwb43rfl6wbwanocrJm9XFYfskuVC5K/TPyczNU7b84CXcbxks1Un6H6tLH9vf2LRnn8Ax7A5WQAAAHicY2BkYGAA4teL1+yI57f5ysDNwgAC529f0kOmWRiYVgEpDgYmEA8AUzEKsQAAAHicY2BkYGB2+O/AEMPCAAJAkpEBFbAAADgKAe0EAAAiAAAAAAQAAAAEAAAAAAAAKgAqACoAiAAAeJxjYGRgYGBhsGFgYgABEMkFhAwM/xn0QAIAD6YBhwB4nI1Ty07cMBS9QwKlQapQW3VXySvEqDCZGbGaHULiIQ1FKgjWMxknMfLEke2A+IJu+wntrt/QbVf9gG75jK577Lg8K1qQPCfnnnt8fX1NRC/pmjrk/zprC+8D7tBy9DHgBXoWfQ44Av8t4Bj4Z8CLtBL9CniJluPXASf0Lm4CXqFX8Q84dOLnMB17N4c7tBo1AS/Qi+hTwBH4rwHHwN8DXqQ30XXAS7QaLwSc0Gn8NuAVWou/gFmnjLrEaEh9GmDdDGgL3B4JsrRPDU2hTOiMSuJUIdKQQayiAth69r6akSSFqIJuA19TrzCIaY8sIoxyrNIrL//pw7A2iMygkX5vDj+G+kuoLdX4GlGK/8Lnlz6/h9MpmoO9rafrz7ILXEHHaAx95s9lsI7AHNMBWEZHULnfAXwG9/ZqdzLI08iuwRloXE8kfhXYAvE23+23DU3t626rbs8/8adv+9DWknsHp3E17oCf+Z48rvEQNZ78paYM38qfk3v/u3l3u3GXN2Dmvmvpf1Srwk3pB/VSsp512bA/GG5i2WJ7wu430yQ5K3nFGiOqgtmSB5pJVSizwaacmUZzZhXLlZTq8qGGFY2YcSkqbth6aW1tRmlaCFs2016m5qn36SbJrqosG4uMV4aP2PHBmB3tjtmgN2izkGQyLWprekbIntJFing32a5rKWCN/SdSoga45EJykyQ7asZvHQ8PTm6cslIpwyeyjbVltNikc2HTR7YKh9LBl9DADC0U/jLcBZDKrMhUBfQBvXRzLtFtjU9eNHKin0x5InTqb8lNpfKv1s1xHzTXRqgKzek/mb7nB8RZTCDhGEX3kK/8Q75AmUM/eLkfA+0Hi908Kx4eNsMgudg5GLdRD7a84npi+YxNr5i5KIbW5izXas7cHXIMAau1OueZhfj+cOcP3P8MNIWLyYOBuxL6DRylJ4cAAAB4nGNgYoAALjDJyIAOWMCiTIxMLDmZedkABtIBygAAAA==) format('woff');
+}
+
+.markdown-body {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #333333;
+  overflow: hidden;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+.markdown-body a {
+  background: transparent;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline: 0;
+}
+
+.markdown-body b,
+.markdown-body strong {
+  font-weight: bold;
+}
+
+.markdown-body mark {
+  background: #ff0;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body sub,
+.markdown-body sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+.markdown-body sup {
+  top: -0.5em;
+}
+.markdown-body sub {
+  bottom: -0.25em;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+.markdown-body img {
+  border: 0;
+}
+
+.markdown-body hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+.markdown-body pre {
+  overflow: auto;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+.markdown-body input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body html input[disabled] {
+  cursor: default;
+}
+
+.markdown-body input {
+  line-height: normal;
+}
+
+.markdown-body input[type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body .codehilitetable {
+  border: 0;
+  border-spacing: 0;
+}
+
+.markdown-body .codehilitetable tr {
+  border: 0;
+}
+
+.markdown-body .codehilitetable pre,
+.markdown-body .codehilitetable div.codehilite {
+  margin: 0;
+}
+
+.markdown-body .linenos,
+.markdown-body .code,
+.markdown-body .codehilitetable td {
+  border: 0;
+  padding: 0;
+}
+
+.markdown-body td:not(.linenos) .linenodiv {
+  padding: 0 !important;
+}
+
+.markdown-body .code {
+  width: 100%;
+}
+
+.markdown-body .linenos div pre,
+.markdown-body .linenodiv pre,
+.markdown-body .linenodiv {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.markdown-body .code div pre,
+.markdown-body .code div {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -moz-border-radius-topright: 3px;
+  -moz-border-radius-bottomright: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.markdown-body * {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body input {
+  font: 13px Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+  line-height: 1.4;
+}
+
+.markdown-body a {
+  color: #4183c4;
+  text-decoration: none;
+}
+
+.markdown-body a:hover,
+.markdown-body a:focus,
+.markdown-body a:active {
+  text-decoration: underline;
+}
+
+.markdown-body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.markdown-body hr:before,
+.markdown-body hr:after {
+  display: table;
+  content: " ";
+}
+
+.markdown-body hr:after {
+  clear: both;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+
+.markdown-body h1 {
+  font-size: 30px;
+}
+
+.markdown-body h2 {
+  font-size: 21px;
+}
+
+.markdown-body h3 {
+  font-size: 16px;
+}
+
+.markdown-body h4 {
+  font-size: 14px;
+}
+
+.markdown-body h5 {
+  font-size: 12px;
+}
+
+.markdown-body h6 {
+  font-size: 11px;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body kbd {
+  background-color: #e7e7e7;
+  background-image: -moz-linear-gradient(#fefefe, #e7e7e7);
+  background-image: -webkit-linear-gradient(#fefefe, #e7e7e7);
+  background-image: linear-gradient(#fefefe, #e7e7e7);
+  background-repeat: repeat-x;
+  border-radius: 2px;
+  border: 1px solid #cfcfcf;
+  color: #000;
+  padding: 3px 5px;
+  line-height: 10px;
+  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  display: inline-block;
+}
+
+.markdown-body>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+.markdown-body .headeranchor-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  padding-right: 6px;
+  padding-left: 30px;
+  margin-left: -30px;
+}
+
+.markdown-body .headeranchor-link:focus {
+  outline: none;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.markdown-body h1 .headeranchor,
+.markdown-body h2 .headeranchor,
+.markdown-body h3 .headeranchor,
+.markdown-body h4 .headeranchor,
+.markdown-body h5 .headeranchor,
+.markdown-body h6 .headeranchor {
+  display: none;
+  color: #000;
+  vertical-align: middle;
+}
+
+.markdown-body h1:hover .headeranchor-link,
+.markdown-body h2:hover .headeranchor-link,
+.markdown-body h3:hover .headeranchor-link,
+.markdown-body h4:hover .headeranchor-link,
+.markdown-body h5:hover .headeranchor-link,
+.markdown-body h6:hover .headeranchor-link {
+  height: 1em;
+  padding-left: 8px;
+  margin-left: -30px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.markdown-body h1:hover .headeranchor-link .headeranchor,
+.markdown-body h2:hover .headeranchor-link .headeranchor,
+.markdown-body h3:hover .headeranchor-link .headeranchor,
+.markdown-body h4:hover .headeranchor-link .headeranchor,
+.markdown-body h5:hover .headeranchor-link .headeranchor,
+.markdown-body h6:hover .headeranchor-link .headeranchor {
+  display: inline-block;
+}
+
+.markdown-body h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+
+.markdown-body h4 {
+  font-size: 1.25em;
+}
+
+.markdown-body h5 {
+  font-size: 1em;
+}
+
+.markdown-body h6 {
+  font-size: 1em;
+  color: #777;
+}
+
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre,
+.markdown-body .admonition {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.markdown-body hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 2em;
+}
+
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+.markdown-body blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+
+.markdown-body table th {
+  font-weight: bold;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+.markdown-body img {
+  max-width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body code,
+.markdown-body samp {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0,0,0,0.04);
+  border-radius: 3px;
+}
+
+.markdown-body code:before,
+.markdown-body code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+
+.markdown-body pre>code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+.markdown-body .codehilite {
+  margin-bottom: 16px;
+}
+
+.markdown-body .codehilite pre,
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+
+.markdown-body .codehilite pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+.markdown-body pre code:before,
+.markdown-body pre code:after {
+  content: normal;
+}
+
+/* Admonition */
+.markdown-body .admonition {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  position: relative;
+  border-radius: 3px;
+  border: 1px solid #e0e0e0;
+  border-left: 6px solid #333;
+  padding: 10px 10px 10px 30px;
+}
+
+.markdown-body .admonition table {
+  color: #333;
+}
+
+.markdown-body .admonition p {
+  padding: 0;
+}
+
+.markdown-body .admonition-title {
+  font-weight: bold;
+  margin: 0;
+}
+
+.markdown-body .admonition>.admonition-title {
+  color: #333;
+}
+
+.markdown-body .attention>.admonition-title {
+  color: #a6d796;
+}
+
+.markdown-body .caution>.admonition-title {
+  color: #d7a796;
+}
+
+.markdown-body .hint>.admonition-title {
+  color: #96c6d7;
+}
+
+.markdown-body .danger>.admonition-title {
+  color: #c25f77;
+}
+
+.markdown-body .question>.admonition-title {
+  color: #96a6d7;
+}
+
+.markdown-body .note>.admonition-title {
+  color: #d7c896;
+}
+
+.markdown-body .admonition:before,
+.markdown-body .attention:before,
+.markdown-body .caution:before,
+.markdown-body .hint:before,
+.markdown-body .danger:before,
+.markdown-body .question:before,
+.markdown-body .note:before {
+  font: normal normal 16px fontawesome-mini;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  line-height: 1.5;
+  color: #333;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.markdown-body .admonition:before {
+  content: "\f056\00a0";
+  color: 333;
+}
+
+.markdown-body .attention:before {
+  content: "\f058\00a0";
+  color: #a6d796;
+}
+
+.markdown-body .caution:before {
+  content: "\f06a\00a0";
+  color: #d7a796;
+}
+
+.markdown-body .hint:before {
+  content: "\f05a\00a0";
+  color: #96c6d7;
+}
+
+.markdown-body .danger:before {
+  content: "\f057\00a0";
+  color: #c25f77;
+}
+
+.markdown-body .question:before {
+  content: "\f059\00a0";
+  color: #96a6d7;
+}
+
+.markdown-body .note:before {
+  content: "\f040\00a0";
+  color: #d7c896;
+}
+
+.markdown-body .admonition::after {
+  content: normal;
+}
+
+.markdown-body .attention {
+  border-left: 6px solid #a6d796;
+}
+
+.markdown-body .caution {
+  border-left: 6px solid #d7a796;
+}
+
+.markdown-body .hint {
+  border-left: 6px solid #96c6d7;
+}
+
+.markdown-body .danger {
+  border-left: 6px solid #c25f77;
+}
+
+.markdown-body .question {
+  border-left: 6px solid #96a6d7;
+}
+
+.markdown-body .note {
+  border-left: 6px solid #d7c896;
+}
+
+.markdown-body .admonition>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body .admonition>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* progress bar*/
+.markdown-body .progress {
+  display: block;
+  width: 300px;
+  margin: 10px 0;
+  height: 24px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #ededed;
+  position: relative;
+  box-shadow: inset -1px 1px 3px rgba(0, 0, 0, .1);
+}
+
+.markdown-body .progress-label {
+  position: absolute;
+  text-align: center;
+  font-weight: bold;
+  width: 100%; margin: 0;
+  line-height: 24px;
+  color: #333;
+  text-shadow: 1px 1px 0 #fefefe, -1px -1px 0 #fefefe, -1px 1px 0 #fefefe, 1px -1px 0 #fefefe, 0 1px 0 #fefefe, 0 -1px 0 #fefefe, 1px 0 0 #fefefe, -1px 0 0 #fefefe, 1px 1px 2px #000;
+  -webkit-font-smoothing: antialiased !important;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.markdown-body .progress-bar {
+  height: 24px;
+  float: left;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #96c6d7;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .5), inset 0 -1px 0 rgba(0, 0, 0, .1);
+  background-size: 30px 30px;
+  background-image: -webkit-linear-gradient(
+    135deg, rgba(255, 255, 255, .4) 27%,
+    transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%,
+    transparent 77%, transparent
+  );
+  background-image: -moz-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -ms-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -o-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+}
+
+.markdown-body .progress-100plus .progress-bar {
+  background-color: #a6d796;
+}
+
+.markdown-body .progress-80plus .progress-bar {
+  background-color: #c6d796;
+}
+
+.markdown-body .progress-60plus .progress-bar {
+  background-color: #d7c896;
+}
+
+.markdown-body .progress-40plus .progress-bar {
+  background-color: #d7a796;
+}
+
+.markdown-body .progress-20plus .progress-bar {
+  background-color: #d796a6;
+}
+
+.markdown-body .progress-0plus .progress-bar {
+  background-color: #c25f77;
+}
+
+.markdown-body .candystripe-animate .progress-bar{
+  -webkit-animation: animate-stripes 3s linear infinite;
+  -moz-animation: animate-stripes 3s linear infinite;
+  animation: animate-stripes 3s linear infinite;
+}
+
+@-webkit-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@-moz-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+.markdown-body .gloss .progress-bar {
+  box-shadow:
+    inset 0 4px 12px rgba(255, 255, 255, .7),
+    inset 0 -12px 0 rgba(0, 0, 0, .05);
+}
+
+/* Multimarkdown Critic Blocks */
+.markdown-body .critic_mark {
+  background: #ff0;
+}
+
+.markdown-body .critic_delete {
+  color: #c82829;
+  text-decoration: line-through;
+}
+
+.markdown-body .critic_insert {
+  color: #718c00 ;
+  text-decoration: underline;
+}
+
+.markdown-body .critic_comment {
+  color: #8e908c;
+  font-style: italic;
+}
+
+.markdown-body .headeranchor {
+  font: normal normal 16px octicons-anchor;
+  line-height: 1;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.headeranchor:before {
+  content: '\f05c';
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  margin: 0 4px 0.25em -20px;
+  vertical-align: middle;
+}
+
+/* Media */
+@media only screen and (min-width: 480px) {
+  .markdown-body {
+    font-size:14px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .markdown-body {
+    font-size:16px;
+  }
+}
+
+@media print {
+  .markdown-body * {
+    background: transparent !important;
+    color: black !important;
+    filter:none !important;
+    -ms-filter: none !important;
+  }
+
+  .markdown-body {
+    font-size:12pt;
+    max-width:100%;
+    outline:none;
+    border: 0;
+  }
+
+  .markdown-body a,
+  .markdown-body a:visited {
+    text-decoration: underline;
+  }
+
+  .markdown-body .headeranchor-link {
+    display: none;
+  }
+
+  .markdown-body a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  .markdown-body abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  .markdown-body .ir a:after,
+  .markdown-body a[href^="javascript:"]:after,
+  .markdown-body a[href^="#"]:after {
+    content: "";
+  }
+
+  .markdown-body pre {
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  .markdown-body pre,
+  .markdown-body blockquote {
+    border: 1px solid #999;
+    padding-right: 1em;
+    page-break-inside: avoid;
+  }
+
+  .markdown-body .progress,
+  .markdown-body .progress-bar {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+
+  .markdown-body .progress {
+    border: 1px solid #ddd;
+  }
+
+  .markdown-body .progress-bar {
+    height: 22px;
+    border-right: 1px solid #ddd;
+  }
+
+  .markdown-body tr,
+  .markdown-body img {
+    page-break-inside: avoid;
+  }
+
+  .markdown-body img {
+    max-width: 100% !important;
+  }
+
+  .markdown-body p,
+  .markdown-body h2,
+  .markdown-body h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  .markdown-body h2,
+  .markdown-body h3 {
+    page-break-after: avoid;
+  }
+}
+</style><title>notes</title></head><body><article class="markdown-body"><h2 id="class-4-the-problem-angularjs-solves"><a name="user-content-class-4-the-problem-angularjs-solves" href="#class-4-the-problem-angularjs-solves" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Class 4. The problem AngularJS solves</h2>
+<p>AngularJS tries to give a easier way to have syncronized the data in the <br />
+<strong>model</strong> and the <strong>DOM</strong></p>
+<h2 id="class-5-model-view-whatever"><a name="user-content-class-5-model-view-whatever" href="#class-5-model-view-whatever" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Class 5. Model, View, Whatever</h2>
+<ul>
+<li><strong>MODEL</strong>: The data</li>
+<li><strong>VIEW</strong>: What the user sees (the html in AngularJS)</li>
+<li><strong>WHATEVER</strong>: Is what binds the model with the view. An update in one side<br />
+will update the other automatically. Traditionally this has been the<br />
+controllers, however the approach of AngularJS is different and they&rsquo;ve called<br />
+it <em>whatever</em> MV* for short</li>
+</ul>
+<h2 id="class-6-custom-attributes"><a name="user-content-class-6-custom-attributes" href="#class-6-custom-attributes" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Class 6. Custom attributes</h2>
+<p>In html we can add the attributes we want to the tags. They won&rsquo;t do anything,<br />
+though. However, this attributes values can be accessed by JS</p>
+<p>AngularJS uses custom attributes to modify the DOM. All the custom attributtes<br />
+that starts with <strong>ng-</strong> are from AngularJS</p>
+<h2 id="class-7-global-namespace"><a name="user-content-class-7-global-namespace" href="#class-7-global-namespace" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Class 7. Global Namespace</h2>
+<p>When using global namspaces we can have collision between names and override<br />
+variables.</p>
+<p>AngularJS encapsulates and makes us encapsulate all the JS code for avoiding <br />
+this issue.</p>
+<h2 id="class-9-modules-apps-and-controllers"><a name="user-content-class-9-modules-apps-and-controllers" href="#class-9-modules-apps-and-controllers" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Class 9. Modules, Apps, and Controllers</h2>
+<p>Starting a project:</p>
+<ol>
+<li>import angular</li>
+<li>create a file <code>app.js</code> and initialize angular</li>
+</ol>
+<pre><code>var myApp = angular.module('myApp', []);
+</code></pre>
+
+<blockquote>
+<p>Is not necessary that the variable name has the same as the <em>module</em>. This<br />
+variable is just to don&rsquo;t pollute the global <em>Namespace</em></p>
+</blockquote>
+<ol>
+<li>define the app in the DOM</li>
+</ol>
+<pre><code class="html">&lt;html ng-app=&quot;myApp&quot;&gt;
+</code></pre>
+
+<blockquote>
+<p>the exact tag for putting the Angular attribute is not necessarily in the <br />
+very top of the web page. Is important, though, that all the DOM we want<br />
+to modify with Angular is a child of the tag with the <code>ng-app</code> attributte</p>
+</blockquote>
+<ol>
+<li>Create a controller</li>
+</ol>
+<pre><code>myApp.controller('mainController', function(){
+
+})
+</code></pre>
+
+<ol>
+<li>Assign the new controller to a DOM element</li>
+</ol>
+<pre><code>&lt;div ng-controller='mainController'&gt;&lt;/div&gt;
+</code></pre>
+
+<h2 id="class-10-dependency-injection"><a name="user-content-class-10-dependency-injection" href="#class-10-dependency-injection" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Class 10. Dependency injection</h2>
+<ul>
+<li><strong>Dependency Injection</strong>: Rather than creating an object inside a function,<br />
+you pass it to the function</li>
+</ul>
+<h2 id="class-11-the-scope-service"><a name="user-content-class-11-the-scope-service" href="#class-11-the-scope-service" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Class 11. The Scope Service</h2>
+<p>Is an object of AngularJS</p>
+<p>Inject it:<br />
+<pre><code>myApp.controller('mainController', function($cope){
+    console.log($scope)
+});
+</code></pre></p>
+<blockquote>
+<p>Notice that we don&rsquo;t have to define it anywhere. It comes along with AngularJS<br />
+. Also noticed that it uses a <code>$</code>. All AngularJS objects starts with <code>$</code></p>
+</blockquote>
+<p>Once we have the $scope, we can assign variables to it:</p>
+<pre><code class="js">$scope.name = 'Jane Doe'
+$scope.getname = function(){
+    return 'John Doe'
+}
+</code></pre>
+
+<p>The $scope is automatically available from the client side. This means that the<br />
+<code>$scope</code> is a middle piece that binds the model with the view.</p>
+<h2 id="class-12-functions-and-strings-js-aside"><a name="user-content-class-12-functions-and-strings-js-aside" href="#class-12-functions-and-strings-js-aside" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Class 12. Functions and Strings (JS aside)</h2>
+<p>In JS you can take a function and get a String representation. <br />
+<pre><code>var searchPeople = function(firstName, lastName){
+    // Do something...
+}
+
+var searchPeopleString = searchPeople.toString();
+</code></pre></p>
+<p>This means that we can parse the string to get which should be the names of <br />
+the expected parameters. And this is what AngularJS does for dependency <br />
+injection.</p>
+<h2 id="class-13-how-does-angularjs-dependency-injection"><a name="user-content-class-13-how-does-angularjs-dependency-injection" href="#class-13-how-does-angularjs-dependency-injection" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Class 13. How does AngularJS dependency injection?</h2>
+<pre><code class="js">angular.injectior().annotate(searchPeople);
+
+// [&quot;firstName&quot;, &quot;lastName&quot;]
+</code></pre>
+
+<p>This returns from a function an array with the name of the parameters. With <br />
+this Angular checks the dependencies we want to inject.</p>
+<h2 id="class-14-get-another-services"><a name="user-content-class-14-get-another-services" href="#class-14-get-another-services" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Class 14. Get another services.</h2>
+<ol>
+<li>Go to angularjs.com</li>
+<li>Go to develop &gt;&gt; API reference for searching for new services</li>
+<li>Add the new dependency to the <strong>controller</strong></li>
+</ol>
+<pre><code class="js">myApp.controller(&quot;mainController&quot;, function($scope, $log){
+    console.log($scope);
+    console.log($log);
+});
+</code></pre>
+
+<blockquote>
+<p>The order in which we put the dependencies doesn&rsquo;t matter since Angular<br />
+actually reads the name and order of the dependencies for a <em>controller</em></p>
+</blockquote>
+<h3 id="dependencies-not-built-in-angularjs"><a name="user-content-dependencies-not-built-in-angularjs" href="#dependencies-not-built-in-angularjs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Dependencies not built-in AngularJS</h3>
+<ol>
+<li>Download the desired service (or write our own)</li>
+<li>Import to your index.html</li>
+<li>Inject in the dependecies of the app</li>
+</ol>
+<pre><code class="js">var myApp = angular.module('myApp', [&quot;ngMessage&quot;]);
+</code></pre>
+
+<blockquote>
+<p>This makes the service available for the whole app</p>
+</blockquote>
+<h2 id="class-15-arrays-and-functions-javascript-aside"><a name="user-content-class-15-arrays-and-functions-javascript-aside" href="#class-15-arrays-and-functions-javascript-aside" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Class 15. Arrays and Functions (JavaScript aside)</h2>
+<p>JavaScript allows you to mix different types of variables inside an array. <br />
+ So AngularJS uses this for setting an array of string and at the en a function</p>
+<pre><code class="js">var arr = [&quot;1&quot;, &quot;2&quot;, function(){console.log(&quot;Hello!!&quot;)}];
+
+arr[2](); // This logs `&quot;Hello&quot;` into the console
+</code></pre>
+
+<h2 id="class-16-dependency-injection-and-minification"><a name="user-content-class-16-dependency-injection-and-minification" href="#class-16-dependency-injection-and-minification" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Class 16. Dependency injection and minification</h2>
+<ul>
+<li><strong>Minification</strong>: Shrinking the size of files for faster download (we normally<br />
+add &lsquo;.min&rsquo; to the name of the file)</li>
+</ul>
+<p>The problem with the way we&rsquo;ve being injecting the dependencies is that if you<br />
+minify the code and this minifications changes the name of the dependencies, it<br />
+will break your app because AngularJS won&rsquo;t be able to find the dependencies <br />
+anymore. That means that this:</p>
+<pre><code class="js">myApp.controller('mainController', function($scope, $log){
+
+    $log($scope);
+
+});
+</code></pre>
+
+<p>Will turn into this:</p>
+<pre><code class="js">myApp.controller(&quot;mainController&quot;,function(n,o){o(n)});
+</code></pre>
+
+<p>Since neither <code>n</code> and <code>o</code> means nothing to AngularJS, it won&rsquo;t know which<br />
+dependencies look for. It will throw an <em>injection error</em></p>
+<p>That&rsquo;s for AngularJS provides this way of defining the dependencies:</p>
+<pre><code class="js">myApp.controller('mainController', [&quot;$scope&quot;, &quot;$log&quot;, function($scope, $log){
+    $log($scope);
+}]);
+</code></pre>
+
+<p>The last item of the array is always de function, and before all the<br />
+dependencies.</p>
+<p>With this method, the minifier will provide a code like this:</p>
+<pre><code class="js">myApp.controller(&quot;mainController&quot;,[&quot;$scope&quot;,&quot;$log&quot;,function(o,l){l(o)}]);
+</code></pre>
+
+<p>Since the minifier will not ever change the strings, now AngularJS can look<br />
+into the array elements and look for the dependencies.</p>
+<blockquote>
+<p>This way of dependency injection is the recomended because we all should be<br />
+minifying our code.</p>
+<p><strong>Beware!!</strong> the order of the dependencies matters here.</p>
+</blockquote>
+<h2 id="class-17-scope-and-interpolation"><a name="user-content-class-17-scope-and-interpolation" href="#class-17-scope-and-interpolation" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Class 17. Scope and Interpolation</h2>
+<ul>
+<li>Interpolation: Creating a string by combining strings and placeholders</li>
+</ul>
+<p>In AngularJS, whatever is put between curly braces on a view is interpolated</p>
+<pre><code class="js">myApp.controller('mainController', [&quot;$scope&quot;, &quot;$log&quot;, function($scope, $log){
+    $scope.name = &quot;Edgar&quot;;
+}]);
+</code></pre>
+
+<pre><code class="html">&lt;div ng-controller='mainController'&gt;
+    &lt;h1&gt;Hello {{ name + &quot;. How are you?&quot;}}&lt;/h1&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>This will print in the html &ndash;&gt; Hello Edgar. How are you?</p>
+<p>This binds the model and the view.</p>
+<h2 id="class-18-directives-and-two-data-binding"><a name="user-content-class-18-directives-and-two-data-binding" href="#class-18-directives-and-two-data-binding" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Class 18. Directives and two data binding</h2>
+<ul>
+<li>
+<p>Directive: An instruction to AngularJS to manipulate a piece of the DOM. (This<br />
+is what web-components do right now);</p>
+</li>
+<li>
+<p><code>ng-model</code> binds the value of the element to the model<br />
+<pre><code class="html">&lt;input type=&quot;text&quot; ng-model=&quot;handle&quot; /&gt;
+
+&lt;h1&gt; {{ handle }}&lt;/h1&gt;
+</code></pre></p>
+</li>
+</ul>
+<p>In this example, everything wrote in the <code>input</code> will be displayed in the <code>&lt;h1&gt;</code></p>
+<h2 id="class-19-the-event-loop-javascript-aside"><a name="user-content-class-19-the-event-loop-javascript-aside" href="#class-19-the-event-loop-javascript-aside" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Class 19. The Event Loop (JavaScript Aside)</h2>
+<p>What EventLoop means is that when there are events declared, JS waits for that<br />
+events to occur.</p>
+<h2 id="class-20-watchers-and-the-digest-loop"><a name="user-content-class-20-watchers-and-the-digest-loop" href="#class-20-watchers-and-the-digest-loop" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Class 20. Watchers and the Digest Loop</h2>
+<p>AngularJS automatically adds the event listeners and extends the event loop.</p>
+<p>AngularJS add the Angular Context which keeps track of all the variables that<br />
+it has to keep track for their values to change. Everytime we add a variable<br />
+to <code>$scope</code> AngularJS creates a watcher for that variable.</p>
+<p>The digest loops runs everytime an event occurs checking if any of the variables<br />
+in the watch list has changed. If some did, refreses the DOM.</p>
+<p>This Angular Context (Watchers + Digest Loop).</p>
+<p>This has a caveat. All the changes made outside the angularJS context won&rsquo;t <br />
+fire the DigestLoop. This happens with async code because it runs in another<br />
+thread . To avoid this, is why we should use AngularJS services as much as <br />
+we can. Or this is another way to force AngularJS to fire the digest Loop:</p>
+<pre><code class="js">setTimeout(function() {
+    $scope.$apply(function(){ // Forces the AngularJS Digest Loop
+        $scope.handle = 'newtwitterhandle';
+        console.log('Scope changed');
+    })
+}, 3000);
+</code></pre>
+
+<p>I we had used the angular service <code>$timeout</code> we could get rid of <code>.$apply</code>. This<br />
+is a big criticism of AngularJS. You have to buy completly the platform and <br />
+write everything on its way for creating complex applications.</p>
+<blockquote>
+<p>Anyway, Tony Alicea thinks the benefits outweight this caveat.</p>
+</blockquote>
+<h2 id="class-21-common-directives"><a name="user-content-class-21-common-directives" href="#class-21-common-directives" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Class 21. Common Directives</h2>
+<h3 id="ng-if"><a name="user-content-ng-if" href="#ng-if" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>ng-if</h3>
+<p>shows the element when te expresion valuates to true:</p>
+<pre><code class="html">&lt;div class=&quot;alert&quot; ng-if=&quot;handle.length !== characters&quot;&gt; 
+The imput has to be 5 characters long 
+&lt;/div&gt;
+</code></pre>
+
+<blockquote>
+<p>For this example we first set a variable in the scope called <br />
+<code>characters</code></p>
+</blockquote>
+<h3 id="ng-show-ng-hide"><a name="user-content-ng-show-ng-hide" href="#ng-show-ng-hide" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>ng-show &amp;&amp; ng-hide</h3>
+<p>This works similarly as <code>ng-if</code> </p>
+<h3 id="ng-class"><a name="user-content-ng-class" href="#ng-class" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>ng-class</h3>
+<p>Allows to add a class with a condition</p>
+<p><pre><code class="html">&lt;div class=&quot;alet&quot; ng-class=&quot;{'alert-warning': handle.length &lt; characters}&quot;&gt;&lt;/div&gt;
+</code></pre><br />
+we can add as many classes with their conditions as we want</p>
+<h3 id="ng-repeat"><a name="user-content-ng-repeat" href="#ng-repeat" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>ng-repeat</h3>
+<pre><code class="js">$scope.rules= [
+    {rulename: &quot;Something&quot;},
+    {rulename: &quot;Something else&quot;},
+    {rulename: &quot;Something more&quot;}
+]
+</code></pre>
+
+<pre><code class="html">&lt;ul&gt;
+    &lt;li ng-repeat=&quot;rule in rules&quot;&gt;
+        {{ rule.rulename}}
+    &lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+
+<h2 id="class-22-common-directives-2"><a name="user-content-class-22-common-directives-2" href="#class-22-common-directives-2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Class 22. Common directives 2</h2>
+<h3 id="ng-click"><a name="user-content-ng-click" href="#ng-click" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>ng-click</h3>
+<pre><code class="js">var myApp = angular.module(&quot;myApp&quot;, []);
+
+myApp.controller(&quot;mainController&quot;, [&quot;$scope&quot;, function($scope){
+    $scope.alertClick() = function() {
+        alert();
+    }
+}]);
+</code></pre>
+
+<pre><code class="html">&lt;div ng-click=&quot;alertClick()&quot;&gt;&lt;/div&gt;
+</code></pre>
+
+<h3 id="ng-cloak"><a name="user-content-ng-cloak" href="#ng-cloak" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>ng-cloak</h3>
+<p>Makes sure the user doesn&rsquo;t see the interpolation code</p>
+<pre><code class="html">&lt;div ng-cloak&gt;{{name}}&lt;/div&gt;
+</code></pre>
+
+<h2 id="class-23-xmlhttprequest-object-javascript-aside"><a name="user-content-class-23-xmlhttprequest-object-javascript-aside" href="#class-23-xmlhttprequest-object-javascript-aside" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Class 23. XMLHTTPRequest Object (JavaScript Aside)</h2>
+<p>Explanation of XMLHttpRequest</p>
+<h2 id="class-24-external-data-and-http"><a name="user-content-class-24-external-data-and-http" href="#class-24-external-data-and-http" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Class 24. External Data and $http</h2>
+<p>To get information from an external API</p>
+<pre><code class="js">var myApp = angular.module(&quot;myApp&quot;, []);
+
+myApp.controller(&quot;mainController&quot;, [&quot;$scope&quot;, &quot;$http&quot;, function($scope, $http){
+    $http.get('/api')
+        .success(function(result){
+            $scope.rules = result;
+        })
+        .error(function(data, status){
+            console.log(data);
+        });
+
+    $scope.newRule = '';
+
+    $scope.addRule = function(){
+        $http.post('/api', {newRule: $scope.newRule})
+            .success(function(result){ //The post rule send data and
+                                        // and then does a get
+                $scope.rules = result;
+                $scope.newRule = '';
+            })
+            .error(function(data, status){
+                console.log(data);
+            })
+    }
+}]);
+</code></pre>
+
+<h2 id="class-25-multiple-controllers-multiple-views"><a name="user-content-class-25-multiple-controllers-multiple-views" href="#class-25-multiple-controllers-multiple-views" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Class 25. Multiple controllers, multiple views</h2>
+<p>The variables are unique for each controller, so they don&rsquo;t collide,<br />
+they don&rsquo;t pollute de global scope</p>
+<h2 id="class-26-single-page-apps-and-hash-html-and-javascript-aside"><a name="user-content-class-26-single-page-apps-and-hash-html-and-javascript-aside" href="#class-26-single-page-apps-and-hash-html-and-javascript-aside" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Class 26. Single page apps and hash. (HTML and Javascript Aside)</h2>
+<p>The navigation with hash on <code>anchors</code> are called fragment identifiers</p>
+<p>JS has a event called &lsquo;hashchange&rsquo; which fires when the (as its name<br />
+says) hash changes.</p>
+<p>For the event to be launched, we don&rsquo;t actually need a target anchor.<br />
+So with this, we can emulate a navigation.</p>
+<h2 id="class-27-routing-templates-and-controllers"><a name="user-content-class-27-routing-templates-and-controllers" href="#class-27-routing-templates-and-controllers" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Class 27. Routing, templates, and controllers</h2>
+<p>We use the angular external service <strong>$ngRoute</strong> for doing this.</p>
+<pre><code class="js">var myApp = angular.module('myApp', ['$ngRoute']);
+
+myApp.config(function($routeProvider){
+    $routeProvider
+
+    .when('/', {
+        templateUrl: 'pages/main.html',
+        controller: 'mainController'
+    })
+    .when('/second', {
+        templateUrl: 'pages/second.html'
+        controller: 'secondController'
+    });
+});
+
+myApp.controller('mainController', ['$scope', '$location', '$log', function($scope, $location, $log){
+    // Do some stuff
+}])
+
+myApp.controller('secondController', ['$scope', '$location', '$log', function($scope, $location, $log){
+    // Do some stuff
+}])
+</code></pre>
+
+<pre><code class="html">&lt;div ng-view&gt;&lt;/div&gt;
+</code></pre>
+
+<h2 id="class-28-routing-templates-and-controllers-2"><a name="user-content-class-28-routing-templates-and-controllers-2" href="#class-28-routing-templates-and-controllers-2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Class 28. Routing, templates, and controllers (2)</h2>
+<p>Whenever we put the <code>ng-view</code> that dom will be updated with the <code>$routeProvider</code> configuration</p>
+<h3 id="routeparams"><a name="user-content-routeparams" href="#routeparams" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>RouteParams</h3>
+<p>With this service (comes along with ngRoute), we can set parts of the route to specific variables:</p>
+<pre><code class="js">myApp.config(function ($routeProvider) {
+    $routeProvider
+
+    .when('/second/:num', { // Whatever after second/ will be set to num
+        templateUrl: 'pages/second.html',
+        controller: 'secondController'
+    })
+});
+
+myApp.controller('secondController', [&quot;$scope&quot;, &quot;$log&quot;, &quot;$routeParams&quot;,
+function($scope, $log, $routeParams){
+    $scope.num = $routeParams.num;
+}])
+</code></pre>
+
+<blockquote>
+<p>Notice that for matching the route, now we need &lsquo;second/something&rsquo;. If the <br />
+route is just &lsquo;second/&rsquo; it won&rsquo;t match.</p>
+</blockquote>
+<h2 id="class-29-singletons-and-services-js-aside"><a name="user-content-class-29-singletons-and-services-js-aside" href="#class-29-singletons-and-services-js-aside" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Class 29. Singletons and services. JS Aside</h2>
+<ul>
+<li><strong>Singleton</strong>: The one and only copy of an object</li>
+</ul>
+<p>All services in AngularJS are singletons but <code>$scope</code></p>
+<h2 id="class-30-creating-a-service"><a name="user-content-class-30-creating-a-service" href="#class-30-creating-a-service" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Class 30. Creating a service</h2>
+<pre><code class="js">myApp.service('nameService', function(){
+    var self = this;
+    this.name = 'John Doe';
+
+    this.namelength = function() {
+        return self.name.length;
+    };
+})
+
+myApp.controller('testController', ['nameService', function(nameService){
+    console.log(nameService.namelength());
+}])
+</code></pre>
+
+<p>If we wanted to update the name of the service from the scope (this means<br />
+whenever the $scope variable chages):</p>
+<pre><code class="js">myApp.service('nameService', function(){
+    var self = this;
+    this.name = 'John Doe';
+
+    this.namelength = function() {
+        return self.name.length;
+    };
+})
+
+myApp.controller('testController', ['nameService', function(nameService){
+    $scope.name = nameService.name;
+
+    $scope.$watch('name', function(){
+        nameService.name = $scope.name;
+    });
+}])
+</code></pre>
+
+<blockquote>
+<p>If you refresh the page you&rsquo;ll lose the data changed. For saving it it&rsquo;s <br />
+needed to persist it in someway (cookie, localstorage, etc&hellip;)</p>
+</blockquote>
+<h2 id="class-31-reusable-components-html-aside"><a name="user-content-class-31-reusable-components-html-aside" href="#class-31-reusable-components-html-aside" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Class 31. Reusable components. HTML Aside</h2>
+<p>Web components for the win!</p>
+<p>Costume directives from Angular were the patch for having the power of<br />
+web components while they weren&rsquo;t implemented yet.</p>
+<h2 id="class-32-variable-names-and-normalization-js-aside"><a name="user-content-class-32-variable-names-and-normalization-js-aside" href="#class-32-variable-names-and-normalization-js-aside" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Class 32. Variable names and normalization. JS Aside</h2>
+<ul>
+<li><strong>Normalize</strong>: To make consistent to a standard<ul>
+<li>Specifically we are dealing with &lsquo;text normalization&rsquo;, or making strings<br />
+of text consistent to a standard</li>
+</ul>
+</li>
+</ul>
+<pre><code class="js">var resultLinkHref = '#';
+</code></pre>
+
+<p>Will be normalizad in <code>HTML</code> into: </p>
+<pre><code class="html">&lt;div result-link-href='#'&gt;&lt;/div&gt;
+</code></pre>
+
+<h2 id="class-33-34-creating-a-directive"><a name="user-content-class-33-34-creating-a-directive" href="#class-33-34-creating-a-directive" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Class 33, 34. Creating a Directive</h2>
+<pre><code class="js">myApp.directive('searchResult', funtion(){
+    return {
+        restrict: 'AECM'
+        //template: &quot;&lt;h1&gt;Hello&lt;/h1&gt;&quot;
+        templateUrl: &quot;directives/searchResult.html&quot;
+        replace: true
+    }
+})
+</code></pre>
+
+<ul>
+<li>replace: restrict the ways a directive can be used<ul>
+<li>A: As an attribute</li>
+<li>E: As an element</li>
+<li>C: As a class</li>
+<li>M: As comment</li>
+</ul>
+</li>
+<li>template: html string</li>
+<li>templateUrl: set an external html as template</li>
+<li>replace: eliminates the tag from the directive. False by default</li>
+</ul>
+<pre><code class="html">&lt;!-- These 4 ways will ouput the same --&gt;
+&lt;search-result&gt;&lt;/search-result&gt;
+&lt;div search-result&gt;&lt;/div&gt;
+&lt;div class=&quot;search-result&quot;&gt;&lt;/div&gt;
+&lt;!-- directive: search-result --&gt;
+</code></pre>
+
+<h2 id="class-35-36-scope"><a name="user-content-class-35-36-scope" href="#class-35-36-scope" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Class 35 &amp; 36. Scope</h2>
+<p>To avoid the data access and modifications from the directives in various pages</p>
+<p>the <code>scope</code> in the directives are isolated, so if we want to link the controller<br />
+scope with the directive scope we do the following</p>
+<pre><code class="js">myApp.controller(function($scope){
+    $scope.person = {
+        name = &quot;John Doe&quot;,
+        adress = &quot;False Street 555&quot;
+    }
+
+    $scope.formatedAddress = function(person){
+        return person + &quot; &quot; + adress;
+    }
+})
+
+myApp.directive('searchResult', funtion(){
+    return {
+        restrict: 'AECM'
+        templateUrl: &quot;directives/searchResult.html&quot;
+        replace: true,
+        scope: {
+            personName: &quot;@&quot;,
+            personObject: &quot;=&quot;,
+            formattedAddressFunction: &quot;&amp;&quot;
+
+        }
+    }
+})
+</code></pre>
+
+<ul>
+<li>@: Text</li>
+<li>=: Object</li>
+<li>&amp;: Function</li>
+</ul>
+<p>As the directive lives inside a controller, has access to the $scope of its <br />
+parent directive</p>
+<pre><code class="html">&lt;!-- Template --&gt;
+&lt;a href=&quot;#&quot; class=&quot;list-group-item&quot;&gt;
+    &lt;h4 class=&quot;list-group-item-heading&quot;&gt;{{ personName }}&lt;/h4&gt;
+    &lt;p class=&quot;list-group-item-text&quot;&gt;
+        {{ personObject.adress }}
+    &lt;/p&gt;
+    &lt;p class=&quot;list-group-item-text&quot;&gt;
+    &lt;!-- We pass to the function a mapping object. each key 
+    has to be the placeholder defined in the template for the
+    function custom atributte. The value is the actual value we
+    want to pass to the function --&gt;
+        {{ formatedAddressFunction({ aperson:personObject }) }}
+    &lt;/p&gt;
+&lt;/a&gt;
+
+&lt;!-- using the directive --&gt;
+&lt;search-result person-object= &quot;person&quot; 
+    person-name=&quot;person.name&quot;
+    formated-address-function=&quot;formatedAddress(aperson)&quot;&gt;
+&lt;/search-result&gt;
+</code></pre>
+
+<blockquote>
+<p>Notice that we don&rsquo;t use the double moustache notation when giving to the<br />
+directive the values for its curstom properties  </p>
+</blockquote>
+<h2 id="class-38-repeated-directives"><a name="user-content-class-38-repeated-directives" href="#class-38-repeated-directives" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Class 38. Repeated directives</h2>
+<pre><code class="js">myApp.controller(&quot;mainController&quot;, [&quot;$scope&quot;, function($scope){
+    $scope.people = [
+        person1: new Person(),
+        person2: new Person(),
+        person3: new Person(),
+    ]
+}])
+</code></pre>
+
+<pre><code class="html">&lt;div ng-repeat=&quot;person in people&quot;&gt;
+    &lt;p&gt;One persone&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+
+<h2 id="class-39-understanding-compile"><a name="user-content-class-39-understanding-compile" href="#class-39-understanding-compile" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Class 39. Understanding Compile</h2>
+<ul>
+<li>Compiler: Converts code to a lower-level language</li>
+<li>Linker: After the compiler, generates a file the computer will actually interact with.</li>
+</ul>
+<blockquote>
+<p>Very computer science-y terms that are sort of valid, but not <br />
+familiar to many web developers&hellip;<strong>and not what angularjs does</strong></p>
+</blockquote>
+<pre><code class="js">myApp.directive('searchResult', funtion(){
+    return {
+        restrict: 'AECM'
+        templateUrl: &quot;directives/searchResult.html&quot;
+        replace: true,
+        scope: {
+            personName: &quot;@&quot;,
+            personObject: &quot;=&quot;,
+            formattedAddressFunction: &quot;&amp;&quot;
+
+        },
+        compile: function(elem, attrs){
+            console.log('Compiling...');
+            console.log(elem);
+
+            return {
+                pre: function(scope, element, attrs){
+                    console.log('Pre-linking...');
+                },
+
+                post: function(scope, element, attrs) {
+                    console.log('Post-linking');
+                }
+            }
+        }
+    }
+})
+</code></pre>
+
+<ul>
+<li>Compile is called once. It defines the directive html. Can change the <br />
+element before being used.</li>
+<li>pre-link and post-link are called once by each loop<ul>
+<li>Pre-link (normaly not used. We don&rsquo;t have still the element)</li>
+<li>Post-link is called once after all the pre-links in reverse order than<br />
+pre-link (is a safer method to use because at that point</li>
+</ul>
+</li>
+</ul>
+<p>This is used when we need to add some logic depending on the ocasion for a <br />
+directive and it&rsquo;s too complex to put it in the directive itself.</p>
+<h2 id="class-40-understanding-link"><a name="user-content-class-40-understanding-link" href="#class-40-understanding-link" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Class 40. Understanding link</h2>
+<p>Hardly ever we use <code>compile</code>. so instead we can use <code>link</code></p>
+<pre><code class="js">link: function(scope, element, attrs){
+                    console.log('Pre-linking...');
+},
+</code></pre>
+
+<blockquote>
+<p>Beware with the performance issues when doing this.</p>
+</blockquote>
+<h2 id="class-41-understanding-transclusion"><a name="user-content-class-41-understanding-transclusion" href="#class-41-understanding-transclusion" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Class 41. Understanding Transclusion</h2>
+<ul>
+<li><strong>Transclusion</strong>: Include one document inside another</li>
+</ul>
+<pre><code class="js">myApp.directive('searchResult', funtion(){
+    return {
+        restrict: 'AECM'
+        templateUrl: &quot;directives/searchResult.html&quot;
+        replace: true,
+        scope: {
+            personName: &quot;@&quot;,
+            personObject: &quot;=&quot;,
+            formattedAddressFunction: &quot;&amp;&quot;
+
+        },
+        transclude: true // to enable transclusion
+    }
+})
+</code></pre>
+
+<pre><code class="html">&lt;!-- Template --&gt;
+&lt;a href=&quot;#&quot; class=&quot;list-group-item&quot;&gt;
+    &lt;h4 class=&quot;list-group-item-heading&quot;&gt;{{ personName }}&lt;/h4&gt;
+    &lt;p class=&quot;list-group-item-text&quot;&gt;
+        {{ personObject.adress }}
+    &lt;/p&gt;
+    &lt;p class=&quot;list-group-item-text&quot;&gt;
+        {{ formatedAddressFunction({ aperson:personObject }) }}
+    &lt;/p&gt;
+    &lt;small&gt;
+        &lt;ng-transclude&gt;&lt;/ng-transclude&gt;
+    &lt;/small&gt;
+&lt;/a&gt;
+
+&lt;!-- using the directive --&gt;
+&lt;search-result person-object={{ person }} 
+    person-name={{ person.name }}
+    formated-adress-function=&quot;formatedAddress(aperson)&quot;&gt;
+    *Search results may not be valid
+    &lt;!-- The text above will be inserted in the ng-transclude position --&gt;
+&lt;/search-result&gt;
+</code></pre>
+
+<p><code>&lt;ng-transclude&gt;</code> marks the insert point.</p>
+<h2 id="big-words-index"><a name="user-content-big-words-index" href="#big-words-index" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Big Words Index</h2>
+<ul>
+<li>Dependency injection. Class 10</li>
+<li>Minification. Class 15</li>
+<li>Interpolation. Class 17</li>
+<li>Directive. Class 18</li>
+<li>Singleton. class 29</li>
+<li>Compiler. Class 39</li>
+<li>Linker. Class 39</li>
+<li>Transclusion: Class 41</li>
+</ul></article></body></html>
