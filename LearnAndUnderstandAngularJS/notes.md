@@ -73,6 +73,7 @@ you pass it to the function
 Is an object of AngularJS
 
 Inject it:
+
 ```
 myApp.controller('mainController', function($cope){
     console.log($scope)
@@ -96,6 +97,7 @@ The $scope is automatically available from the client side. This means that the
 
 ## Class 12. Functions and Strings (JS aside)
 In JS you can take a function and get a String representation. 
+
 ```
 var searchPeople = function(firstName, lastName){
     // Do something...
@@ -236,6 +238,7 @@ This binds the model and the view.
 is what web-components do right now);
 
 * `ng-model` binds the value of the element to the model
+
 ```html
 <input type="text" ng-model="handle" />
 
@@ -755,6 +758,41 @@ myApp.directive('searchResult', funtion(){
 
 `<ng-transclude>` marks the insert point.
 
+
+# Controller As
+
+Instead of attaching variables to `$scope` we can attach them to the
+controller itself as follows
+
+```js
+myApp.controller("controllerA", [function(){
+    this.testValue = 2;
+}])
+```
+
+```html
+<div ng-controller="controllerA as c">
+    <input ng-model="c.testValue">
+</div>
+```
+
+> Notice that we have to give the controller an alias for using this
+method.
+
+This way of passing variables it's an alternative and its use is personal
+it works the same way than with $scope. The only downside is that we can't
+set custom wathchers this way, for doing that we need to inject the 
+`$scope` service
+
+# Update #1
+
+* Transpile: Converting source code of one programming language into 
+another
+
+## Usefull links:
+* [ES6](https://github.com/lukehoban/es6features)
+* [Typescript](http://www.typescriptlang.org/)
+
 ## Big Words Index
 
 * Dependency injection. Class 10
@@ -765,3 +803,4 @@ myApp.directive('searchResult', funtion(){
 * Compiler. Class 39
 * Linker. Class 39
 * Transclusion: Class 41
+* Transpile: Class Update #1

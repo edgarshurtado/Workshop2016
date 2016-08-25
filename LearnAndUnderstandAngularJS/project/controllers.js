@@ -2,35 +2,29 @@
  * Created by Edgar S. Hurtado on 23/08/16.
  */
 
-firstAngularApp.controller("indexController", ["$scope", "dataService", function($scope, dataService){
+firstAngularApp.controller("indexController", ["$scope", "$location" ,"dataService", function($scope, $location, dataService){
     $scope.city = dataService.city;
 
     // This function is necesary for updating the value of the dataService whenever the `$scope.city` changes
     $scope.$watch("city", function(){
         dataService.city = $scope.city;
     })
+
+    $scope.submit = function(){
+        $location.path("/forecast");
+    }
 }]);
 
-firstAngularApp.controller("forecastController", ["$scope", "dataService", "$resource", "$routeParams",
-    function($scope, dataService, $resource, $routeParams){
+firstAngularApp.controller("forecastController", ["$scope", "dataService", "$routeParams", "weatherService",
+    function($scope, dataService, $routeParams, weatherService){
+
         $scope.city = dataService.city;
 
         // Get the days from a url param. if there's no days by default is set to 2
         $scope.days = $routeParams.days || 2;
 
-        $scope.weatherAPI = $resource(
-            "http://api.openweathermap.org/data/2.5/forecast/daily",
-            // This 2 objects with their values avoid crossorigin issues
-            {callback: "JSON_CALLBACK"},
-            {get: {method: "JSONP"}}
-        );
-
         // Get call to the openWeather API
-        $scope.weatherResult = $scope.weatherAPI.get({
-            q: $scope.city,
-            cnt: $scope.days,
-            appid: "9102a05baa45e83f500ef056fa532322"
-        });
+        $scope.weatherResult = weatherService.getWeather($scope.city, $scope.days);
 
         $scope.convertToCelsius = function(degK){
             console.log(degK);
