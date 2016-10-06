@@ -412,7 +412,7 @@ So with this, we can emulate a navigation.
 We use the angular external service **$ngRoute** for doing this.
 
 ```js
-var myApp = angular.module('myApp', ['$ngRoute']);
+var myApp = angular.module('myApp', ['ngRoute']);
 
 myApp.config(function($routeProvider){
     $routeProvider

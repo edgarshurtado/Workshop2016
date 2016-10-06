@@ -162,3 +162,28 @@ Ejercicio: Dónde habría que colocar los paréntesis en la siguiente fórmula
     * p=0, q=1, r=0
     * p=0, q=1, r=1
     * p=1, q=1, r=0
+
+### 1.2c Todas las interpretaciones de una o varias fórmulas.
+
+Cuando realizamos un análisis de todos los posibles resultados de una fórmula
+con todas las combinaciones de *verdadero* y *falso* de sus proposiciones,
+obtenemos lo que se conoce como una tabla de verdad.
+
+El sistema de lógica con el que estamos tratando es problemático debido a que
+el crecimiento de la cantidad de combinaciones posibles va aumentando de forma
+exponencial. De hecho, como cada proposición admite los valores *verdadero* o
+*falso*, la cantidad de combinaciones es de 2^n. Donde n es la cantidad de 
+proposiciones distintas que disponemos en la fórmula. Por ejemplo: si tenemos
+una fórmula con las proposiciones p,q y r, la cantidad de combinaciones es de
+2^3 = 8.
+
+Se puede hacer un análisis conjunto de varias fórmulas reuniendo todas las 
+letras (sin repetir) que aparecen en cada fórmula y haciendo la tabla de 
+verdad con ellas.
+
+Cuando una interpretación satisface completamente todas las fórmulas, podemos 
+decir que: I ⊨ {φ1, φ2, φ3, φ4}
+
+> Atención! Sólo con una fórmula que no sea satisfecha por la interpretación,
+no podremos decir que la fórmula satisface la interpretación. En cambio tendremos
+que expresar: I' ⊭ {φ1, φ2, φ3, φ4}
