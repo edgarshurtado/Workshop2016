@@ -279,7 +279,7 @@ setTimeout(function() {
 }, 3000);
 ```
 
-I we had used the angular service `$timeout` we could get rid of `.$apply`. This
+If we had used the angular service `$timeout` we could get rid of `.$apply`. This
 is a big criticism of AngularJS. You have to buy completly the platform and 
 write everything on its way for creating complex applications.
 
